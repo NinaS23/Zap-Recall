@@ -36,6 +36,7 @@ const InputMeta = styled.input`
   margin-top: 60px;
   border-radius: 11px;
   border-style: none;
+  color: #D70900;
   ::placeholder{
     font-family: 'Roboto';
     font-style: normal;
@@ -53,6 +54,10 @@ const StartButton = styled.button`
   background: #E8E8E8;
   border-radius: 11px;
   border-color: ${(props) => props.borderColor};
+  :hover{
+    background-color:  #d1d0ca;
+   
+  }
 `
 
 const Start = styled.h2`

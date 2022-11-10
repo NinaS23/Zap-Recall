@@ -4,6 +4,7 @@ import { Content, InputMeta, StartButton,Start } from "./style";
 
 export default function Entry() {
     const [ meta, setMeta ] = useState('');
+    
     return (
         <Content>
             <div>
