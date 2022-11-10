@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import logo from "../../assets/imgs/logo.png"
 import { StartButton, Content, Start, StartLogo } from "../Entry/style";
 import { SelectType, Option } from "./style";
@@ -6,6 +7,7 @@ import { SelectType, Option } from "./style";
 
 export default function Home() {
     const [questionType, setQuestionType] = useState('escolha um tema para zapear...');
+    const navigate = useNavigate();
     const list = [
         { id: 0, name: 'escolha um tema para zapear...' },
         { id: 1, name: 'Typescript' },
@@ -13,11 +15,13 @@ export default function Home() {
         { id: 3, name: 'PostgresSQL' },
         { id: 4, name: 'MongoDB' }
     ];
-    console.log(questionType);
+
     function startGame(questionType) {
         if (questionType === 'escolha um tema para zapear...') {
             alert("escolha uma modalidade de perguntas!");
         }
+        const pickedPath = questionType.toLowerCase();
+        navigate('/' + pickedPath);
     }
 
     return (
