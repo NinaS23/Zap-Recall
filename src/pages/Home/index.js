@@ -20,7 +20,7 @@ export default function Home() {
         if (questionType === 'escolha um tema para zapear...') {
             alert("escolha uma modalidade de perguntas!");
         }
-        const pickedPath = questionType.toLowerCase();
+        let pickedPath = questionType.toLowerCase();
         navigate('/' + pickedPath);
     }
 
