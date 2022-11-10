@@ -10,13 +10,14 @@ export default function Entry() {
     const { setMetaPoint } = useContext(MetaContext);
     const navigate = useNavigate()
 
-    function startGame( meta ) {
+    function startGame(meta) {
         if (meta === "") {
             alert("digite um valor para sua meta e prossiga!");
-         }
-        const metaPointValue = Number(meta);
-        setMetaPoint(metaPointValue);
-        navigate("/home");
+        } else {
+            const metaPointValue = Number(meta);
+            setMetaPoint(metaPointValue);
+            navigate("/home");
+        }
     }
 
     return (
