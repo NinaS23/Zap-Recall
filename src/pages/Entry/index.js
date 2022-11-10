@@ -13,7 +13,7 @@ export default function Entry() {
         let metaPointValue = Number(meta);
         if (meta === "" ) {
             alert("digite um valor para sua meta e prossiga!");
-        } else if (metaPointValue  > 8){
+        } else if ( metaPointValue  > 8 || metaPointValue < 0 ){
             alert("digite um número entre 0-8");
         } else {
             setMetaPoint(metaPointValue);
