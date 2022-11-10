@@ -1,5 +1,13 @@
-export default function Entry(){
+import logo from "../../assets/imgs/logo.png";
+import { Content } from "./style";
+
+export default function Entry() {
     return (
-        <h1>oi, sou entrada</h1>
+        <Content>
+            <div>
+                <img src={logo} alt="logo" />
+                <h1>ZapRecall</h1>
+            </div>
+        </Content>
     );
 }
