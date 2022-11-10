@@ -7,10 +7,10 @@ import { useNavigate } from "react-router-dom";
 
 export default function Entry() {
     const [meta, setMeta] = useState("");
-    const { metaPoint, setMetaPoint } = useContext(MetaContext);
+    const { setMetaPoint } = useContext(MetaContext);
     const navigate = useNavigate()
 
-    function startGame(meta) {
+    function startGame( meta ) {
         if (meta === "") {
             alert("digite um valor para sua meta e prossiga!");
          }
