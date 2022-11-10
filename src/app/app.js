@@ -9,7 +9,7 @@ function App() {
     <MetaContext.Provider value={{ metaPoint, setMetaPoint }}>
     <BrowserRouter>
       <Routes>
-      <Route  path="/" element={<Entry setMetaPoint={setMetaPoint} metaPoint={metaPoint} />} />
+      <Route  path="/" element={<Entry />} />
       </Routes>
     </BrowserRouter>
     </MetaContext.Provider>

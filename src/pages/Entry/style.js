@@ -5,7 +5,9 @@ const Content = styled.div`
     align-items: center;
     flex-direction: column;
     justify-content: center;
-    div{
+ 
+`
+const StartLogo = styled.div`
         margin-top: 150px;
         display: flex;
         flex-direction: column;
@@ -26,9 +28,19 @@ const Content = styled.div`
             letter-spacing: -0.012em;
             color: #FFFFFF;
           }
-  }
-
 `
+const AlertDiv = styled.div`
+  h2{
+    color: #D70900;
+    font-family: 'Recursive';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 31px;
+  }
+`
+
+
 const InputMeta = styled.input`
   width: 200px;
   height: 37px;
@@ -73,5 +85,7 @@ export {
   Content,
   InputMeta,
   StartButton,
-  Start
+  Start,
+  AlertDiv,
+  StartLogo
 };
