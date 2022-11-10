@@ -16,7 +16,7 @@ export default function Entry() {
         } else {
             const metaPointValue = Number(meta);
             setMetaPoint(metaPointValue);
-            navigate("/home");
+            navigate("/select-type");
         }
     }
 

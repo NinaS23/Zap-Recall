@@ -2,7 +2,7 @@ import { useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import MetaContext from "../context/metaContext";
 import Entry from "../pages/Entry";
-import Home from "../pages/Home";
+import SelectTypeQuestions from "../pages/selectType";
 
 function App() {
   const [ metaPoint, setMetaPoint ] = useState(null);
@@ -12,7 +12,7 @@ function App() {
     <BrowserRouter>
       <Routes>
       <Route  path="/" element={<Entry />} />
-      <Route  path="/home" element={<Home />} />
+      <Route  path="/select-type" element={<SelectTypeQuestions />} />
       </Routes>
     </BrowserRouter>
     </MetaContext.Provider>

@@ -5,7 +5,7 @@ import { StartButton, Content, Start, StartLogo } from "../Entry/style";
 import { SelectType, Option } from "./style";
 
 
-export default function Home() {
+export default function SelectTypeQuestions() {
     const [questionType, setQuestionType] = useState('escolha um tema para zapear...');
     const navigate = useNavigate();
     const list = [
