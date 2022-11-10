@@ -11,10 +11,10 @@ export default function Entry() {
 
     function isMetaDone(meta) {
         let metaPointValue = Number(meta);
-        const ValidMetaNumbers = [0, 1, 2, 3, 4, 5, 6, 7, 8];
+        const validMetaNumbers = [0, 1, 2, 3, 4, 5, 6, 7, 8];
         if (meta === "") {
             alert("digite um valor para sua meta e prossiga!");
-        } else if (!ValidMetaNumbers.includes(metaPointValue)) {
+        } else if (!validMetaNumbers.includes(metaPointValue)) {
             alert("digite um número entre 0-8");
         } else {
             setMetaPoint(metaPointValue);
