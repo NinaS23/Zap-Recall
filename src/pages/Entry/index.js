@@ -2,7 +2,6 @@ import { useContext, useState } from "react";
 import logo from "../../assets/imgs/logo.png";
 import MetaContext from "../../context/metaContext";
 import { Content, InputMeta, StartButton, Start, StartLogo } from "./style";
-import 'react-toastify/dist/ReactToastify.css';
 import { useNavigate } from "react-router-dom";
 
 export default function Entry() {
@@ -11,10 +10,12 @@ export default function Entry() {
     const navigate = useNavigate()
 
     function isMetaDone(meta) {
-        if (meta === "") {
+        let metaPointValue = Number(meta);
+        if (meta === "" ) {
             alert("digite um valor para sua meta e prossiga!");
+        } else if (metaPointValue  > 8){
+            alert("digite um número entre 0-8");
         } else {
-            const metaPointValue = Number(meta);
             setMetaPoint(metaPointValue);
             navigate("/select-type");
         }
