@@ -35,6 +35,7 @@ const InputMeta = styled.input`
   background: #FFFFFF;
   margin-top: 60px;
   border-radius: 11px;
+  border-style: none;
   ::placeholder{
     font-family: 'Roboto';
     font-style: normal;
@@ -44,7 +45,28 @@ const InputMeta = styled.input`
     color: #808080;
   }
 `
+
+const StartButton = styled.button`
+  width: 200px;
+  height: 44px;
+  margin-top: 12px;
+  background: #E8E8E8;
+  border-radius: 11px;
+  border-color: ${(props) => props.borderColor};
+`
+
+const Start = styled.h2`
+font-family: 'Recursive';
+font-style: normal;
+font-weight: 400;
+font-size: 17px;
+line-height: 14px;
+text-align: center;
+color: ${(props) => props.startColor};
+`
 export {
   Content,
-  InputMeta
+  InputMeta,
+  StartButton,
+  Start
 };
