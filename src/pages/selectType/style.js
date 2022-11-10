@@ -6,7 +6,7 @@ height: 37px;
 margin-top: 60px;
 border-radius: 14px;
 border-style: none;
-background-color: #e9e4ee;
+background-color: #FFFFFF;
 font-family: 'RocknRoll One';
 color:  ${(props) => props.colorInput};
 `

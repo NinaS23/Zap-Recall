@@ -11,9 +11,10 @@ export default function Entry() {
 
     function isMetaDone(meta) {
         let metaPointValue = Number(meta);
-        if (meta === "" ) {
+        const ValidMetaNumbers = [0, 1, 2, 3, 4, 5, 6, 7, 8];
+        if (meta === "") {
             alert("digite um valor para sua meta e prossiga!");
-        } else if ( metaPointValue  > 8 || metaPointValue < 0 ){
+        } else if (!ValidMetaNumbers.includes(metaPointValue)) {
             alert("digite um número entre 0-8");
         } else {
             setMetaPoint(metaPointValue);
@@ -27,13 +28,13 @@ export default function Entry() {
                 <img src={logo} alt="logo" />
                 <h1>ZapRecall</h1>
             </StartLogo>
-                <InputMeta 
-                    type="text"
-                    id="meta"
-                    name="input-meta"
-                    onChange={e => setMeta(e.target.value)}
-                    placeholder="Digite sua meta de zaps...">
-                </InputMeta>
+            <InputMeta
+                type="text"
+                id="meta"
+                name="input-meta"
+                onChange={e => setMeta(e.target.value)}
+                placeholder="Digite sua meta de zaps...">
+            </InputMeta>
             <StartButton borderColor={meta === '' ? '#E8E8E8' : '#D70900'} onClick={() => isMetaDone(meta)} >
                 <Start startColor={meta === '' ? "#C0C0C0" : '#D70900'}>Escolher Tema!</Start>
             </StartButton>
