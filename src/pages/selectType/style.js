@@ -8,12 +8,10 @@ border-radius: 14px;
 border-style: none;
 background-color: #e9e4ee;
 font-family: 'RocknRoll One';
-color:  ${(props) => props.colorInput}
+color:  ${(props) => props.colorInput};
 `
 const Option = styled.option`
-
-`
-
+`;
 
 export {
     SelectType,
