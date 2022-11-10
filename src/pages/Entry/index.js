@@ -26,15 +26,15 @@ export default function Entry() {
                 <img src={logo} alt="logo" />
                 <h1>ZapRecall</h1>
             </StartLogo>
-            <InputMeta
-                type="text"
-                id="meta"
-                name="input-meta"
-                onChange={e => setMeta(e.target.value)}
-                placeholder="Digite sua meta de zaps...">
-            </InputMeta>
+                <InputMeta 
+                    type="text"
+                    id="meta"
+                    name="input-meta"
+                    onChange={e => setMeta(e.target.value)}
+                    placeholder="Digite sua meta de zaps...">
+                </InputMeta>
             <StartButton borderColor={meta === '' ? '#E8E8E8' : '#D70900'} onClick={() => startGame(meta)} >
-                <Start startColor={meta === '' ? "#C0C0C0" : '#D70900'}>Iniciar Recall!</Start>
+                <Start startColor={meta === '' ? "#C0C0C0" : '#D70900'}>Escolher Tema!</Start>
             </StartButton>
         </Content>
     );
