@@ -1,7 +1,7 @@
 import { useContext, useState } from "react";
 import logo from "../../assets/imgs/logo.png";
 import MetaContext from "../../context/metaContext";
-import { Content, InputMeta, StartButton, Start, AlertDiv, StartLogo } from "./style";
+import { Content, InputMeta, StartButton, Start, StartLogo } from "./style";
 import 'react-toastify/dist/ReactToastify.css';
 import { useNavigate } from "react-router-dom";
 
