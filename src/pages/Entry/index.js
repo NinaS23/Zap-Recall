@@ -10,7 +10,7 @@ export default function Entry() {
     const { setMetaPoint } = useContext(MetaContext);
     const navigate = useNavigate()
 
-    function startGame(meta) {
+    function isMetaDone(meta) {
         if (meta === "") {
             alert("digite um valor para sua meta e prossiga!");
         } else {
@@ -33,7 +33,7 @@ export default function Entry() {
                     onChange={e => setMeta(e.target.value)}
                     placeholder="Digite sua meta de zaps...">
                 </InputMeta>
-            <StartButton borderColor={meta === '' ? '#E8E8E8' : '#D70900'} onClick={() => startGame(meta)} >
+            <StartButton borderColor={meta === '' ? '#E8E8E8' : '#D70900'} onClick={() => isMetaDone(meta)} >
                 <Start startColor={meta === '' ? "#C0C0C0" : '#D70900'}>Escolher Tema!</Start>
             </StartButton>
         </Content>
