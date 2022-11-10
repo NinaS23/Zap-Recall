@@ -19,9 +19,10 @@ export default function SelectTypeQuestions() {
     function startGame(questionType) {
         if (questionType === 'escolha um tema para zapear...') {
             alert("escolha uma modalidade de perguntas!");
+        } else {
+            let pickedPath = questionType.toLowerCase();
+            navigate('/' + pickedPath);
         }
-        let pickedPath = questionType.toLowerCase();
-        navigate('/' + pickedPath);
     }
 
     return (
@@ -32,10 +33,10 @@ export default function SelectTypeQuestions() {
             </StartLogo>
             <SelectType
                 name="select"
-                className="inputText" 
+                className="inputText"
                 colorInput={questionType === 'escolha um tema para zapear...' ? '#808080' : '#D70900'}
                 onChange={e => setQuestionType(e.target.value)}
-                >
+            >
                 {list.map((item, index) => (
                     <Option value={item.name}>{item.name}</Option>
                 ))}
