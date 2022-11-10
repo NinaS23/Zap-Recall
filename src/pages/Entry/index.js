@@ -3,17 +3,21 @@ import logo from "../../assets/imgs/logo.png";
 import MetaContext from "../../context/metaContext";
 import { Content, InputMeta, StartButton, Start, AlertDiv, StartLogo } from "./style";
 import 'react-toastify/dist/ReactToastify.css';
+import { useNavigate } from "react-router-dom";
 
 export default function Entry() {
-    const [meta, setMeta] = useState('');
+    const [meta, setMeta] = useState("");
     const { metaPoint, setMetaPoint } = useContext(MetaContext);
+    const navigate = useNavigate()
 
     function startGame(meta) {
-        if (meta === '') {
-           alert('digite um valor para sua meta e prossiga!')
-        }
+        if (meta === "") {
+            alert("digite um valor para sua meta e prossiga!");
+         }
+        const metaPointValue = Number(meta);
+        setMetaPoint(metaPointValue);
+        navigate("/home");
     }
-    
 
     return (
         <Content>
