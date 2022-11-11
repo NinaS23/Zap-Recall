@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import MetaContext from "../context/metaContext";
 import TypeContext from "../context/typeContext";
 import Entry from "../pages/Entry";
+import Home from "../pages/Home";
 import SelectTypeQuestions from "../pages/selectType";
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Entry />} />
             <Route path="/select-type" element={<SelectTypeQuestions />} />
+            <Route path="/home" element={<Home />} />
           </Routes>
         </BrowserRouter>
       </MetaContext.Provider>
