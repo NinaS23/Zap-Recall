@@ -2,7 +2,6 @@ import { BoxValidation, IconDiv, AnswerDiv, Red, Orange, Green } from "./style"
 
 
 export default function OpenCard({ word, picked, setShowAnswer, card, index }) {
-  
     if (picked === false) {
         return (
             <>

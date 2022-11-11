@@ -23,7 +23,7 @@ export default function Home({ newType }) {
         if (typeData === 'typescript') mapData = data.typescript;
         mapData.map((e, index) => {
             if (selectedIndex === index) {
-                setCard(index);
+                setCard(selectedIndex);
                 let newDataValue = {
                     ...e,
                     picked: true,
