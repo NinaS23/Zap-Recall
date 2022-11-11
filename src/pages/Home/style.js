@@ -43,14 +43,11 @@ h2{
     color: #333333;
 }
 `
-const IconDiv = styled.div`
- padding-top: 60px;
 
-`
 
 export {
     Content,
     ClosedCards,
     OpenQuestion,
-    IconDiv
+    
 }

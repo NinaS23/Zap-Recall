@@ -2,6 +2,7 @@ import { useState } from "react";
 import CardClosed from "../../components/ClosedCard";
 import Footer from "../../components/Footer";
 import Header from "../../components/Header";
+import OpenCard from "../../components/OpenCard";
 import data from "../../data/test";
 import { Content, ClosedCards, OpenQuestion,IconDiv } from "./style";
 
@@ -49,12 +50,7 @@ export default function Home({ newType }) {
                             />
                             :
                             <OpenQuestion>
-                                <div>
-                                    <h2>{e.react}</h2>
-                                    <IconDiv>
-                                        <ion-icon name="reload-outline"></ion-icon>
-                                    </IconDiv>
-                                </div>
+                               <OpenCard  question={e.react}/>
                             </OpenQuestion>
                         }
                     </ClosedCards>
