@@ -17,6 +17,9 @@ const HeaderDiv = styled.div`
     letter-spacing: -0.012em;
     color: #FFFFFF;
  }
+ img{
+     height: 48px;
+ }
 `
 export {
     HeaderDiv
