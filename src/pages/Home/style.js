@@ -25,6 +25,23 @@ align-items: center;
 width: 100%;
 `
 
+const OpenAnswer = styled.div`
+background-color: #FFFFD4;
+width: 80%;
+margin-top: 10px;
+height: 130px;
+border-radius: 15px;
+
+h2{
+    font-family: 'Recursive';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 14px;
+    color: #333333;
+}
+`
+
 const OpenQuestion = styled.div`
 background-color: #FFFFD4;
 width: 80%;
@@ -55,6 +72,7 @@ export {
     Content,
     ClosedCards,
     OpenQuestion,
-    CardsOpen
+    CardsOpen,
+    OpenAnswer
     
 }

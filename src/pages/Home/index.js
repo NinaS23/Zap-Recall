@@ -4,7 +4,7 @@ import Footer from "../../components/Footer";
 import Header from "../../components/Header";
 import OpenCard from "../../components/OpenCard";
 import data from "../../data/test";
-import { Content, ClosedCards, OpenQuestion, CardsOpen } from "./style";
+import { Content, ClosedCards, OpenQuestion, CardsOpen, OpenAnswer } from "./style";
 
 export default function Home({ newType }) {
     let typeData = newType.toLowerCase()
@@ -51,15 +51,15 @@ export default function Home({ newType }) {
                                 index={index}
                             />
                             :
-                            <CardsOpen onClick={() => setShowAnswer(!showAnser)}>
+                            <CardsOpen onClick={() => setShowAnswer(true)}>
                                 {showAnser === false && e.picked === true ?
                                     <OpenQuestion>
-                                        <OpenCard question={e.react} />
+                                        <OpenCard word={e.react} picked={false}/>
                                     </OpenQuestion>
                                     :
-                                    <OpenQuestion>
-                                        <OpenCard question={e.resp} />
-                                    </OpenQuestion>
+                                    <OpenAnswer>
+                                        <OpenCard  word={e.resp} picked={true} setShowAnswer={setShowAnswer}/>
+                                    </OpenAnswer>
                                 }
 
                             </CardsOpen>
