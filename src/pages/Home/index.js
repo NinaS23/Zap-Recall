@@ -4,7 +4,7 @@ import Footer from "../../components/Footer";
 import Header from "../../components/Header";
 import OpenCard from "../../components/OpenCard";
 import data from "../../data/test";
-import { Content, ClosedCards, OpenQuestion,IconDiv } from "./style";
+import { Content, ClosedCards, OpenQuestion } from "./style";
 
 export default function Home({ newType }) {
     let typeData = newType.toLowerCase()
