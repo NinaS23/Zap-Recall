@@ -1,9 +1,13 @@
 import { useState } from "react";
+import { useContext } from "react";
 import CardClosed from "../../components/ClosedCard";
 import Footer from "../../components/Footer";
 import Header from "../../components/Header";
 import OpenCard from "../../components/OpenCard";
+import { IconDiv } from "../../components/OpenCard/style";
+import TypeContext from "../../context/typeContext";
 import data from "../../data/test";
+import Answer from "../answer";
 import { Content, ClosedCards, OpenQuestion, CardsOpen, OpenAnswer } from "./style";
 
 export default function Home({ newType }) {
@@ -13,7 +17,7 @@ export default function Home({ newType }) {
     if (typeData === 'typescript') usedData = data.typescript
     const [newData, setNewData] = useState(usedData);
     const [showAnser, setShowAnswer] = useState(false);
-   
+    const [card, setCard] = useState(null);
 
 
     const handleSelect = (selectedIndex) => {
@@ -23,12 +27,13 @@ export default function Home({ newType }) {
         if (typeData === 'typescript') mapData = data.typescript;
         mapData.map((e, index) => {
             if (selectedIndex === index) {
+                setCard(index);
                 let newDataValue = {
                     ...e,
                     picked: true,
                 };
                 dataModificated.push(newDataValue)
-            } else if (selectedIndex !== index) {
+            } else {
                 let newDataValue = {
                     ...e
                 }
@@ -44,25 +49,22 @@ export default function Home({ newType }) {
             <Header />
             {newData.map((e, index) => {
                 return (
-     
+
                     <ClosedCards onClick={() => handleSelect(index)}>
                         {e.picked === false ?
                             <CardClosed
                                 index={index}
                             />
                             :
-                            <CardsOpen onClick={() => setShowAnswer(true)}>
-                                {showAnser === false && e.picked === true ?
-                                    <OpenQuestion>
-                                        <OpenCard word={e.react} picked={false}/>
-                                    </OpenQuestion>
-                                    :
-                                    <OpenAnswer>
-                                        <OpenCard  word={e.resp} picked={true} setShowAnswer={setShowAnswer}/>
-                                    </OpenAnswer>
-                                }
-
-                            </CardsOpen>
+                            <Answer
+                                newData={newData}
+                                card={card}
+                                setShowAnswer={setShowAnswer}
+                                index={index}
+                                showAnser={showAnser}
+                                question={e.react}
+                                answer={e.resp}
+                            />
                         }
 
                     </ClosedCards>

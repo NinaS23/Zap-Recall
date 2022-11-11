@@ -1,8 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { useContext } from "react";
 import logo from "../../assets/imgs/logo.png"
-import TypeContext from "../../context/typeContext";
 import { StartButton, Content, Start, StartLogo } from "../Entry/style";
 import { SelectType, Option } from "./style";
 
@@ -10,7 +8,6 @@ import { SelectType, Option } from "./style";
 export default function SelectTypeQuestions({ setNewType }) {
     const [questionType, setQuestionType] = useState('escolha um tema para zapear...');
     const navigate = useNavigate();
-    const { setType } = useContext(TypeContext);
     const list = [
         { id: 0, name: 'escolha um tema para zapear...' },
         { id: 1, name: 'Typescript' },
@@ -23,7 +20,6 @@ export default function SelectTypeQuestions({ setNewType }) {
         if (questionType === 'escolha um tema para zapear...') {
             alert("escolha uma modalidade de perguntas!");
         } else {
-            setType(questionType);
             setNewType(questionType);
             navigate("/home");
         }
