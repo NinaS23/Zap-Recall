@@ -40,30 +40,6 @@ export default function Home({ newType }) {
     };
 
 
-    const getAnswer = (selectedIndex) => {
-        let dataModificated = [];
-        let mapData = [];
-        if (typeData === 'nodejs') mapData = data.nodejs;
-        if (typeData === 'typescript') mapData = data.typescript;
-        mapData.map((e, index) => {
-            if (selectedIndex === index) {
-                let newDataValue = {
-                    ...e,
-                    picked: true,
-                };
-                setShowAnswer(true);
-                dataModificated.push(newDataValue)
-            } else if (selectedIndex !== index) {
-                let newDataValue = {
-                    ...e
-                }
-                dataModificated.push(newDataValue);
-            }
-        })
-        setNewData(dataModificated);
-
-    };
-    console.log(newData)
     return (
         <Content>
             <Header />
