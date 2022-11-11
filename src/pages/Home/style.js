@@ -19,9 +19,16 @@ align-items: center;
 margin-top: 5px;
 `
 
-
+const OpenQuestion = styled.div`
+background-color: #FFFFD4;
+width: 80%;
+margin-top: 10px;
+height: 130px;
+border-radius: 15px ;
+`
 
 export {
     Content,
-    ClosedCards
+    ClosedCards,
+    OpenQuestion
 }

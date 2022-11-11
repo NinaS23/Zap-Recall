@@ -3,7 +3,7 @@ import CardClosed from "../../components/ClosedCard";
 import Footer from "../../components/Footer";
 import Header from "../../components/Header";
 import data from "../../data/test";
-import { Content, ClosedCards } from "./style";
+import { Content, ClosedCards, OpenQuestion } from "./style";
 
 export default function Home({ newType }) {
     let typeData = newType.toLowerCase()
@@ -49,7 +49,9 @@ export default function Home({ newType }) {
                                 index={index}
                             />
                             :
-                            <h1>oi</h1>
+                            <OpenQuestion>
+                                oi
+                            </OpenQuestion>
                         }
                     </ClosedCards>
                 )
