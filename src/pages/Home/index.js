@@ -40,11 +40,11 @@ export default function Home({ newType }) {
     return (
         <Content>
             <Header />
-            {newData.map((perg, index) => {
+            {newData.map((e, index) => {
                 return (
 
                     <ClosedCards onClick={() => handleSelect(index)}>
-                        {perg.picked === false ?
+                        {e.picked === false ?
                             <CardClosed
                                 index={index}
                             />
