@@ -1,21 +1,28 @@
+import { useState } from "react";
 import CardClosed from "../../components/ClosedCard";
 import Header from "../../components/Header";
 import data from "../../data/test";
-import { Content, ClosedCards} from "./style";
+import { Content, ClosedCards } from "./style";
 
 export default function Home() {
+    const [ newData , setNewData] = useState(data)
+    const handleSelect = (index) => {
+        console.log(`you have clicked at element with question number: ${index + 1}`)
+        console.log(newData);
+      };
+
     return (
         <Content>
-           <Header />
-           <ClosedCards>
-           {data.map((perg, index) => {
-                return (
-                    <CardClosed
-                        index={index}
-                   />
-                )
-            })} 
-           </ClosedCards>
+            <Header />           
+                {newData.map((perg, index) => {
+                    return (
+                        <ClosedCards onClick={() => handleSelect(index)}>
+                            <CardClosed
+                                index={index}
+                            />
+                        </ClosedCards>
+                    )
+                })}
         </Content>
     )
 }

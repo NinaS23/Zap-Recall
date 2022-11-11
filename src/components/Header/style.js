@@ -3,6 +3,7 @@ import styled from "styled-components";
 const HeaderDiv = styled.div`
  margin-top: 40px;
  display: flex;
+ margin-bottom: 15px;
  h1{
     margin-top: 5px;
     font-family: 'Righteous';

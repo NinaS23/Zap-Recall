@@ -6,6 +6,7 @@ const Content = styled.div`
  flex-direction: column;
  justify-content: center;
  align-items: center;
+
 `;
 
 const ClosedCards = styled.div`
@@ -14,7 +15,7 @@ display: flex;
 flex-direction: column;
 justify-content: center;
 align-items: center;
-margin-top: 38px;
+margin-top: 5px;
 `
 
 export {
