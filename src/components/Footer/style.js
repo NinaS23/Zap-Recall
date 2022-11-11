@@ -2,6 +2,10 @@ import styled from "styled-components";
 
 const FooterDiv = styled.div`
 position: fixed;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
   left: 0;
   bottom: 0;
   width: 100%;
