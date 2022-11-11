@@ -12,9 +12,8 @@ export default function Home({ newType }) {
     if (typeData === 'nodejs') usedData = data.nodejs;
     if (typeData === 'typescript') usedData = data.typescript
     const [newData, setNewData] = useState(usedData);
-    const [newAnserData,setNewANswerData] = useState(usedData);
     const [showAnser, setShowAnswer] = useState(false);
-    const [ question, setQuestion] = useState("");
+   
 
 
     const handleSelect = (selectedIndex) => {
