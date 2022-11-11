@@ -18,6 +18,12 @@ justify-content: center;
 align-items: center;
 margin-top: 5px;
 `
+const CardsOpen = styled.div`
+display: flex;
+justify-content: center;
+align-items: center;
+width: 100%;
+`
 
 const OpenQuestion = styled.div`
 background-color: #FFFFD4;
@@ -49,5 +55,6 @@ export {
     Content,
     ClosedCards,
     OpenQuestion,
+    CardsOpen
     
 }
