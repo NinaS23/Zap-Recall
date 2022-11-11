@@ -1,37 +1,37 @@
 const data = [{
     react: " o React é_",
     resp: "Uma biblioteca JavaScript para construção de interfaces",
-    bolean:false
+    picked:false
 },
 {
     react: "O que é JSX? ",
     resp: "Uma extensão de linguagem do JavaScript",
-    bolean:false
+    picked:false
 },
 {
     react: "componentes devem inicar com__",
     resp: "Letra maiúscula",
-    bolean:false
+    picked:false
 },
 {
     react: "podemos colocar __ dentro do JSX",
     resp: "Expressões",
-    bolean:false
+    picked:false
 },
 {
     react: " o ReactDom nos ajuda__",
     resp: "Interagindo com a DOM para colocar componentes React na tela",
-    bolean:false
+    picked:false
 },
 {
     react: "usamos npm para__",
     resp: "Gerenciar os pacotes necessários e suas dependências",
-    bolean:false
+    picked:false
 },
 {
     react: "usamos props para__ ",
     resp: "Passar diferentes informações para componentes",
-    bolean:false
+    picked:false
 }
 ]
 export default data;
