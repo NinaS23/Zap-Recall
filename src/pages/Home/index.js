@@ -1,5 +1,6 @@
 import { useState } from "react";
 import CardClosed from "../../components/ClosedCard";
+import Footer from "../../components/Footer";
 import Header from "../../components/Header";
 import data from "../../data/test";
 import { Content, ClosedCards } from "./style";
@@ -23,6 +24,7 @@ export default function Home() {
                         </ClosedCards>
                     )
                 })}
+               <Footer />
         </Content>
     )
 }
