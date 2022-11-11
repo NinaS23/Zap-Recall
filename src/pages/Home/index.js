@@ -5,29 +5,29 @@ import Header from "../../components/Header";
 import data from "../../data/test";
 import { Content, ClosedCards } from "./style";
 
-export default function Home({newType}) {
+export default function Home({ newType }) {
     let typeData = newType.toLowerCase()
     let usedData = [];
-    if(typeData === 'nodejs') usedData = data.nodejs;
-    if(typeData === 'typescript') usedData = data.typescript
-    const [ newData , setNewData] = useState(usedData);
- 
+    if (typeData === 'nodejs') usedData = data.nodejs;
+    if (typeData === 'typescript') usedData = data.typescript
+    const [newData, setNewData] = useState(usedData);
+
 
     const handleSelect = (selectedIndex) => {
         let dataModificated = [];
         let mapData = [];
-        if(typeData === 'nodejs') mapData = data.nodejs;
-        if(typeData === 'typescript') mapData = data.typescript;
+        if (typeData === 'nodejs') mapData = data.nodejs;
+        if (typeData === 'typescript') mapData = data.typescript;
         console.log(`you have clicked at element with question number: ${selectedIndex + 1}`)
-        mapData.map((e,index) => {
-            if(selectedIndex === index) {
-             let newDataValue = {
-                 ...e, 
-                 picked: true,
-             };
-             console.log(newDataValue)
-             dataModificated.push(newDataValue)
-            }else{
+        mapData.map((e, index) => {
+            if (selectedIndex === index) {
+                let newDataValue = {
+                    ...e,
+                    picked: true,
+                };
+                console.log(newDataValue)
+                dataModificated.push(newDataValue)
+            } else {
                 let newDataValue = {
                     ...e
                 }
@@ -35,21 +35,26 @@ export default function Home({newType}) {
             }
         })
         setNewData(dataModificated);
-      };
-     
+    };
+
     return (
         <Content>
-            <Header />           
-                {newData.map((perg, index) => {
-                    return (
-                        <ClosedCards onClick={() => handleSelect(index)}>
+            <Header />
+            {newData.map((perg, index) => {
+                return (
+
+                    <ClosedCards onClick={() => handleSelect(index)}>
+                        {perg.picked === false ?
                             <CardClosed
                                 index={index}
                             />
-                        </ClosedCards>
-                    )
-                })}
-               <Footer />
+                            :
+                            <h1>oi</h1>
+                        }
+                    </ClosedCards>
+                )
+            })}
+            <Footer />
         </Content>
     )
 }
