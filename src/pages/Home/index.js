@@ -12,6 +12,7 @@ export default function Home({ newType }) {
     if (typeData === 'nodejs') usedData = data.nodejs;
     if (typeData === 'typescript') usedData = data.typescript
     const [newData, setNewData] = useState(usedData);
+    const [ showAnser, setShowAnswer] = useState(false);
 
 
     const handleSelect = (selectedIndex) => {
@@ -37,6 +38,7 @@ export default function Home({ newType }) {
         setNewData(dataModificated);
     };
 
+
     return (
         <Content>
             <Header />
@@ -49,8 +51,13 @@ export default function Home({ newType }) {
                                 index={index}
                             />
                             :
-                            <OpenQuestion>
-                               <OpenCard  question={e.react}/>
+                            <OpenQuestion onClick={() => setShowAnswer(true) }>
+                               { showAnser === false ? 
+                                <OpenCard  question={e.react}/>
+                                :
+                                <OpenCard  question={e.resp}/>
+                            }
+                              
                             </OpenQuestion>
                         }
                     </ClosedCards>
