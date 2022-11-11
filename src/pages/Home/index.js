@@ -1,14 +1,10 @@
 import { useState } from "react";
-import { useContext } from "react";
 import CardClosed from "../../components/ClosedCard";
 import Footer from "../../components/Footer";
 import Header from "../../components/Header";
-import OpenCard from "../../components/OpenCard";
-import { IconDiv } from "../../components/OpenCard/style";
-import TypeContext from "../../context/typeContext";
 import data from "../../data/test";
 import Answer from "../answer";
-import { Content, ClosedCards, OpenQuestion, CardsOpen, OpenAnswer } from "./style";
+import { Content, ClosedCards, } from "./style";
 
 export default function Home({ newType }) {
     let typeData = newType.toLowerCase()
