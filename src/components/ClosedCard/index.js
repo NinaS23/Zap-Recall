@@ -1,10 +1,11 @@
 import { ClosedCard } from "./style"
 
-export default function CardClosed() {
+export default function CardClosed({ index }) {
     return (
         <ClosedCard>
-            <h3>pergunta 1</h3>
-            <h3>ionicon</h3>
+            <h3>pergunta {index + 1}</h3>
+            <ion-icon className="arrow" name="play-outline"></ion-icon>
         </ClosedCard>
     )
 }
+
