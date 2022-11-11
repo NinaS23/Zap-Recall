@@ -8,7 +8,7 @@ import SelectTypeQuestions from "../pages/selectType";
 
 function App() {
   const [metaPoint, setMetaPoint] = useState(null);
-  const  [type, setType] = useState("");
+  const [type, setType] = useState("");
 
   return (
     <TypeContext.Provider value={{ type, setType }}>
