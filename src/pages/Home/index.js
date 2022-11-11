@@ -7,12 +7,11 @@ import { Content, ClosedCards } from "./style";
 
 export default function Home({newType}) {
     let typeData = newType.toLowerCase()
-    console.log(typeData)
     let usedData = [];
     if(typeData === 'nodejs') usedData = data.nodejs;
     if(typeData === 'typescript') usedData = data.typescript
-
     const [ newData , setNewData] = useState(usedData);
+ 
 
     const handleSelect = (selectedIndex) => {
         let dataModificated = [];
@@ -37,7 +36,7 @@ export default function Home({newType}) {
         })
         setNewData(dataModificated);
       };
-console.log(newData);
+     
     return (
         <Content>
             <Header />           
