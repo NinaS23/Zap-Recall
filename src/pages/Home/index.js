@@ -3,7 +3,7 @@ import CardClosed from "../../components/ClosedCard";
 import Footer from "../../components/Footer";
 import Header from "../../components/Header";
 import data from "../../data/test";
-import { Content, ClosedCards, OpenQuestion } from "./style";
+import { Content, ClosedCards, OpenQuestion,IconDiv } from "./style";
 
 export default function Home({ newType }) {
     let typeData = newType.toLowerCase()
@@ -25,7 +25,6 @@ export default function Home({ newType }) {
                     ...e,
                     picked: true,
                 };
-                console.log(newDataValue)
                 dataModificated.push(newDataValue)
             } else {
                 let newDataValue = {
@@ -50,7 +49,12 @@ export default function Home({ newType }) {
                             />
                             :
                             <OpenQuestion>
-                                oi
+                                <div>
+                                    <h2>{e.react}</h2>
+                                    <IconDiv>
+                                        <ion-icon name="reload-outline"></ion-icon>
+                                    </IconDiv>
+                                </div>
                             </OpenQuestion>
                         }
                     </ClosedCards>
