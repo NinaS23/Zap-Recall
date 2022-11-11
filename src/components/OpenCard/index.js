@@ -21,7 +21,7 @@ export default function OpenCard({ word, picked, setShowAnswer, card, index }) {
                 <AnswerDiv>
                     <h2>{word}</h2>
                     <div>
-                        <BoxValidation>
+                        <BoxValidation onClick={() => console.log(card)}>
                             <Red><h3>Não lembrei</h3></Red>
                             <Orange><h3>Quase não lembrei</h3></Orange>
                             <Green><h3>Zap!</h3></Green>

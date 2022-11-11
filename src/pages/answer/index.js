@@ -4,7 +4,7 @@ import { CardsOpen, OpenAnswer, OpenQuestion } from "../Home/style";
 
 
 export default function Answer({ question,answer, showAnser,setShowAnswer, card, index }) {
-    console.log(card)
+   
     function getAnswer() {
         if(index === card){
             setShowAnswer(true)
