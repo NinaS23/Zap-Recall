@@ -2,19 +2,7 @@ import { BoxValidation, IconDiv, AnswerDiv, Red, Orange, Green } from "./style"
 
 
 export default function OpenCard({ word, picked, setShowAnswer, card, index }) {
-    if (picked === false) {
-        return (
-            <>
-                <div>
-                    <h2>{word}</h2>
-                    <IconDiv onClick={() => setShowAnswer(true)}>
-                        <ion-icon name="reload-outline"></ion-icon>
-                    </IconDiv>
-                </div>
-            </>
-        )
-    }
-    if (picked === true) {
+ 
         return (
             <>
                 <AnswerDiv>
@@ -29,5 +17,5 @@ export default function OpenCard({ word, picked, setShowAnswer, card, index }) {
                 </AnswerDiv>
             </>
         )
-    }
+    
 }
