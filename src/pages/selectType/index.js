@@ -24,8 +24,7 @@ export default function SelectTypeQuestions() {
             alert("escolha uma modalidade de perguntas!");
         } else {
             setType(questionType);
-            let pickedPath = questionType.toLowerCase();
-            navigate('/' + pickedPath);
+            navigate("/home");
         }
     }
 
