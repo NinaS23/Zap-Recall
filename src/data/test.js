@@ -1,4 +1,4 @@
-const data = [{
+const nodejs = [{
     react: " o React é_",
     resp: "Uma biblioteca JavaScript para construção de interfaces",
     picked:false
@@ -34,4 +34,29 @@ const data = [{
     picked:false
 }
 ]
+const typescript = [{
+    react: " o React é_",
+    resp: "Uma biblioteca JavaScript para construção de interfaces",
+    picked:false
+},
+{
+    react: "O que é JSX? ",
+    resp: "Uma extensão de linguagem do JavaScript",
+    picked:false
+},
+{
+    react: "componentes devem inicar com__",
+    resp: "Letra maiúscula",
+    picked:false
+},
+{
+    react: "podemos colocar __ dentro do JSX",
+    resp: "Expressões",
+    picked:false
+},
+]
+let data = {
+    nodejs,
+    typescript
+}
 export default data;

@@ -9,6 +9,7 @@ import SelectTypeQuestions from "../pages/selectType";
 function App() {
   const [metaPoint, setMetaPoint] = useState(null);
   const [type, setType] = useState("");
+  const [newType, setNewType ] = useState("");
 
   return (
     <TypeContext.Provider value={{ type, setType }}>
@@ -16,8 +17,8 @@ function App() {
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Entry />} />
-            <Route path="/select-type" element={<SelectTypeQuestions />} />
-            <Route path="/home" element={<Home />} />
+            <Route path="/select-type" element={<SelectTypeQuestions setNewType={setNewType}/>} />
+            <Route path="/home" element={<Home newType={newType}/>} />
           </Routes>
         </BrowserRouter>
       </MetaContext.Provider>
