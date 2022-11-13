@@ -2,14 +2,15 @@ import { useState } from "react";
 import CardClosed from "../../components/ClosedCard";
 import Footer from "../../components/Footer";
 import Header from "../../components/Header";
-import OpenCard from "../../components/OpenCard";
+/* import OpenCard from "../../components/OpenCard"; */
 import { IconDiv } from "../../components/OpenCard/style";
 import data from "../../data/test";
-import { Content, ClosedCards, OpenQuestion, OpenAnswer, CardsOpen, } from "./style";
+import { Content, ClosedCards, OpenQuestion, OpenAnswer, CardsOpen, AnswerDiv, BoxValidation, Red, Orange, Green, } from "./style";
 
 export default function Home({ newType }) {
     let typeData = newType.toLowerCase();
     let usedData = [];
+    const [validCard, setValidCard] = useState('');
     if (typeData === 'nodejs') usedData = data.nodejs;
     if (typeData === 'typescript') usedData = data.typescript;
     const [newData, setNewData] = useState(usedData);
@@ -37,6 +38,17 @@ export default function Home({ newType }) {
                 let newDataValue = {
                     ...e,
                     picked: "getAnswer",
+                };
+                dataModificated.push(newDataValue);
+            } else if(selectedIndex !== index && type === 'answer') {
+                let newDataValue = {
+                    ...e
+                };
+                dataModificated.push(newDataValue);
+            } else if(selectedIndex === index && type === 'final' ){
+                let newDataValue = {
+                    ...e,
+                    picked: "final",
                 };
                 dataModificated.push(newDataValue);
             } else {
@@ -78,11 +90,34 @@ export default function Home({ newType }) {
                 }
                 else if (e.picked === "getAnswer") {
                     return (
-                        <CardsOpen onClick={() => handleSelect(index, 'final')}>
+                        <CardsOpen>
                             <OpenAnswer>
-                                <OpenCard word={e.resp} picked={true} card={card} index={index} />
+                                <AnswerDiv>
+                                    <h2>{e.resp}</h2>
+                                    <div>
+                                        <BoxValidation onClick={() => handleSelect(index, 'final')}>
+                                            <Red id='red' onClick={() => setValidCard("red")}>
+                                                <h3>Não lembrei</h3>
+                                            </Red>
+                                            <Orange id='orage' onClick={() => setValidCard("red")}>
+                                                <h3>Quase não lembrei</h3>
+                                            </Orange>
+                                            <Green id='green' onClick={() => setValidCard("red")}>
+                                                <h3>Zap!</h3>
+                                            </Green>
+                                        </BoxValidation>
+                                    </div>
+                                </AnswerDiv>
                             </OpenAnswer>
                         </CardsOpen>
+                    )
+                }
+                else if (e.picked === "final"){
+                    return (
+                        <CardsOpen>
+                        <h1>oi</h1>
+                        
+                    </CardsOpen>
                     )
                 }
 
