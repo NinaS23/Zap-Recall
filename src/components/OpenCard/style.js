@@ -72,6 +72,7 @@ color: #FFFFFF;
 const Orange = styled.div`
 display: flex;
 justify-content: center;
+padding-left: 10px;
 align-items: center;
 background-color: #FF922E;
 margin-left: 20px;
