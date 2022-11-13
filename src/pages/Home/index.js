@@ -5,20 +5,15 @@ import Header from "../../components/Header";
 import OpenCard from "../../components/OpenCard";
 import { IconDiv } from "../../components/OpenCard/style";
 import data from "../../data/test";
-import Answer from "../answer";
 import { Content, ClosedCards, OpenQuestion, OpenAnswer, CardsOpen, } from "./style";
 
 export default function Home({ newType }) {
-    let typeData = newType.toLowerCase()
+    let typeData = newType.toLowerCase();
     let usedData = [];
-    const [etapa, setEtapa] = useState(0);
     if (typeData === 'nodejs') usedData = data.nodejs;
-    if (typeData === 'typescript') usedData = data.typescript
+    if (typeData === 'typescript') usedData = data.typescript;
     const [newData, setNewData] = useState(usedData);
-    const [dataAnswer, setDataAnswer] = useState(newData);
-    const [showAnser, setShowAnswer] = useState(false);
     const [card, setCard] = useState(null);
-
 
     const handleSelect = (selectedIndex, type) => {
         let dataModificated = [];
@@ -32,70 +27,68 @@ export default function Home({ newType }) {
                     ...e,
                     picked: 'showQuestion',
                 };
-                dataModificated.push(newDataValue)
+                dataModificated.push(newDataValue);
             } else if (selectedIndex !== index && type === "question") {
                 let newDataValue = {
                     ...e
-                }
+                };
                 dataModificated.push(newDataValue);
             } else if (selectedIndex === index && type === 'answer') {
                 let newDataValue = {
                     ...e,
                     picked: "getAnswer",
                 };
-                dataModificated.push(newDataValue)
+                dataModificated.push(newDataValue);
             } else {
                 let newDataValue = {
                     ...e
-                }
+                };
                 dataModificated.push(newDataValue);
             }
-        })
+        });
         setNewData(dataModificated);
     };
 
-console.log(newData)
-    if (etapa === 0) {
-        return (
-            <Content>
-                <Header />
-                {newData.map((e, index) => {
-                    if (e.picked === "notPicked") {
-                        return (
-                            <ClosedCards onClick={() => handleSelect(index, "question")}>
-                                <CardClosed
-                                    index={index}
-                                />
-                            </ClosedCards>
-                        )
-                    }
-                    else if (e.picked === "showQuestion") {
-                        return (
-                            <CardsOpen onClick={() => handleSelect(index, 'answer')}>
-                                <OpenQuestion>
-                                    <div>
-                                        <h2>{e.resp}</h2>
-                                        <IconDiv >
-                                            <ion-icon name="reload-outline"></ion-icon>
-                                        </IconDiv>
-                                    </div>
-                                </OpenQuestion>
-                            </CardsOpen>
-                        )
-                    }
-                    else if (e.picked === "getAnswer") {
-                        return (
-                            <CardsOpen onClick={() => handleSelect(index, 'final')}>
-                                <OpenAnswer>
-                                    <OpenCard word={e.resp} picked={true} card={card} index={index} />
-                                </OpenAnswer>
-                            </CardsOpen>
-                        )
-                    }
-                
-         })}
-                <Footer />
-            </Content>
-        )
-    }
+    return (
+        <Content>
+            <Header />
+            {newData.map((e, index) => {
+                if (e.picked === "notPicked") {
+                    return (
+                        <ClosedCards onClick={() => handleSelect(index, "question")}>
+                            <CardClosed
+                                index={index}
+                            />
+                        </ClosedCards>
+                    )
+                }
+                else if (e.picked === "showQuestion") {
+                    return (
+                        <CardsOpen onClick={() => handleSelect(index, 'answer')}>
+                            <OpenQuestion>
+                                <div>
+                                    <h2>{e.react}</h2>
+                                    <IconDiv >
+                                        <ion-icon name="reload-outline"></ion-icon>
+                                    </IconDiv>
+                                </div>
+                            </OpenQuestion>
+                        </CardsOpen>
+                    )
+                }
+                else if (e.picked === "getAnswer") {
+                    return (
+                        <CardsOpen onClick={() => handleSelect(index, 'final')}>
+                            <OpenAnswer>
+                                <OpenCard word={e.resp} picked={true} card={card} index={index} />
+                            </OpenAnswer>
+                        </CardsOpen>
+                    )
+                }
+
+            })}
+            <Footer />
+        </Content>
+    )
+
 }
