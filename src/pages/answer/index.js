@@ -8,8 +8,11 @@ export default function Answer({ question,answer, showAnser,setShowAnswer, card,
     function getAnswer() {
         if(index === card){
             setShowAnswer(true)
+        }else{
+            setShowAnswer(false)
         }
     }
+
     return (
         <CardsOpen>
             {showAnser === false  ?
@@ -23,7 +26,7 @@ export default function Answer({ question,answer, showAnser,setShowAnswer, card,
                 </OpenQuestion>
                 :
                 <OpenAnswer>
-                    <OpenCard word={answer} picked={true} card={card} index={index}/>
+                    <OpenCard word={answer} picked={true}  card={card} index={index}/>
                 </OpenAnswer>
             }
              </CardsOpen>
