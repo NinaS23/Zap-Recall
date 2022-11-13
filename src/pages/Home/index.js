@@ -29,20 +29,10 @@ export default function Home({ newType }) {
                     picked: 'showQuestion',
                 };
                 dataModificated.push(newDataValue);
-            } else if (selectedIndex !== index && type === "question") {
-                let newDataValue = {
-                    ...e
-                };
-                dataModificated.push(newDataValue);
             } else if (selectedIndex === index && type === 'answer') {
                 let newDataValue = {
                     ...e,
                     picked: "getAnswer",
-                };
-                dataModificated.push(newDataValue);
-            } else if(selectedIndex !== index && type === 'answer') {
-                let newDataValue = {
-                    ...e
                 };
                 dataModificated.push(newDataValue);
             } else if(selectedIndex === index && type === 'final' ){
