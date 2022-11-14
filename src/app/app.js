@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import MetaContext from "../context/metaContext";
-import TypeContext from "../context/typeContext";
 import Entry from "../pages/Entry";
 import Home from "../pages/Home";
 import SelectTypeQuestions from "../pages/selectType";
