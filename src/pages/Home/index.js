@@ -7,10 +7,10 @@ import FlashCards from "../../components/FlashCards";
 
 
 export default function Home({ newType }) {
-    let typeData = newType.toLowerCase();
+    let typeData = newType;
     let usedData = [];
-    if (typeData === 'nodejs') usedData = data.nodejs;
-    if (typeData === 'typescript') usedData = data.typescript;
+    if (typeData === 'NodeJs') usedData = data.nodejs;
+    if (typeData === 'Typescript') usedData = data.typescript;
     const [newData, setNewData] = useState(usedData);
 
     let dataSelectedByUser = newData.map(value => {
