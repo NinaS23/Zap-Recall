@@ -6,6 +6,7 @@
     --cor-error: #FF3030;
     --cor-almost: #FF922E;
     --cor-correct: #2FBE34;
+    --cor-open:  #333333;
   }
 
   body{
@@ -28,7 +29,7 @@
     color: var(  --cor-almost);
     text-decoration: line-through;
   }
-  
+
   .flashcard.error {
     color: var( --cor-error);
     text-decoration: line-through;
@@ -39,3 +40,5 @@
     background-color: #ffffff;
     cursor: default;
   }
+
+  
