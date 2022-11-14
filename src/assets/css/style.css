@@ -3,10 +3,10 @@
 
 * {
     box-sizing: border-box;
-    --cor-error: #FF3030;
-    --cor-almost: #FF922E;
-    --cor-correct: #2FBE34;
-    --cor-open:  #333333;
+    --color-error: #FF3030;
+    --color-almost: #FF922E;
+    --color-correct: #2FBE34;
+    --color-open:  #333333;
   }
 
   body{
@@ -21,17 +21,17 @@
 
 
   .flashcard.correct {
-    color: var(--cor-correct);
+    color: var(--color-correct);
     text-decoration: line-through;
   }
   
   .flashcard.almost {
-    color: var(  --cor-almost);
+    color: var(  --color-almost);
     text-decoration: line-through;
   }
 
   .flashcard.error {
-    color: var( --cor-error);
+    color: var( --color-error);
     text-decoration: line-through;
   }
   
