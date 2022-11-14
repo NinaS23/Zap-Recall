@@ -1,6 +1,4 @@
-import { useState } from "react";
 import { BoxValidation, AnswerDiv, Red, Orange, Green } from "./style"
-
 
 export default function OpenCard({ answer, zap, index }) {
   

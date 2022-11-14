@@ -1,11 +1,8 @@
 import { useState } from "react";
-import CardClosed from "../../components/ClosedCard";
-import OpenQuestionCard from "../../components/OpenQuestion";
 import Footer from "../../components/Footer";
 import Header from "../../components/Header";
-import OpenCard from "../../components/OpenCard";
 import data from "../../data/test";
-import { Content, ClosedCards, OpenAnswer, CardsOpen } from "./style";
+import { Content } from "./style";
 import FlashCards from "../../components/FlashCards";
 
 

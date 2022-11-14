@@ -1,8 +1,8 @@
 import { OpenQuestion } from "../../pages/Home/style";
-import { IconDiv } from "../OpenCard/style";
+import { IconDiv } from "./style";
 
 
-export default function OpenQuestionCard({question,setFlipped,index}) {
+export default function OpenQuestionCard({question,setFlipped}) {
     return (
         <OpenQuestion>
             <div>

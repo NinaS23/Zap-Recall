@@ -70,7 +70,7 @@ export default function Questions () {
                         tap={e.tap}
                         index={index}
                         tapCard={tapCard}
-                        question={e.frente}
+                        question={e.react}
                         answer={e.resp}
                         status={e.status}
                         zap={zap}

@@ -1,5 +1,5 @@
 import React from 'react';
-import { CardsOpen, ClosedCards, OpenAnswer } from '../../pages/Home/style';
+import { CardsOpen, ClosedCards, OpenAnswer } from './style';
 import OpenQuestionCard from '../OpenQuestion';
 import CardClosed from '../ClosedCard';
 import OpenCard from '../OpenCard';
