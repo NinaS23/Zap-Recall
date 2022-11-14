@@ -1,5 +1,6 @@
 import { useState } from "react";
 import CardClosed from "../../components/ClosedCard";
+import { ClosedCard } from "../../components/ClosedCard/style";
 import Footer from "../../components/Footer";
 import Header from "../../components/Header";
 /* import OpenCard from "../../components/OpenCard"; */
@@ -14,16 +15,14 @@ export default function Home({ newType }) {
     if (typeData === 'nodejs') usedData = data.nodejs;
     if (typeData === 'typescript') usedData = data.typescript;
     const [newData, setNewData] = useState(usedData);
-    const [card, setCard] = useState(null);
 
-    function handleSelect (selectedIndex, type) {
+    function handleSelect(selectedIndex, type) {
         let dataModificated = [];
         let mapData = [];
         if (typeData === 'nodejs') mapData = data.nodejs;
         if (typeData === 'typescript') mapData = data.typescript;
         mapData.map((e, index) => {
             if (selectedIndex === index && type === "question") {
-                setCard(selectedIndex);
                 let newDataValue = {
                     ...e,
                     picked: 'showQuestion',
@@ -35,7 +34,7 @@ export default function Home({ newType }) {
                     picked: "getAnswer",
                 };
                 dataModificated.push(newDataValue);
-            } else if(selectedIndex === index && type === 'final' ){
+            } else if (selectedIndex === index && type === 'final') {
                 let newDataValue = {
                     ...e,
                     picked: "final",
@@ -49,6 +48,7 @@ export default function Home({ newType }) {
             }
         });
         setNewData(dataModificated);
+
     };
 
     return (
@@ -57,21 +57,29 @@ export default function Home({ newType }) {
             {newData.map((e, index) => {
                 if (e.picked === "notPicked") {
                     return (
-                        <ClosedCards onClick={() => handleSelect(index, "question")}>
-                            <CardClosed
-                                index={index}
-                            />
+                        <ClosedCards >
+                            <ClosedCard>
+                                <h3>pergunta {index + 1}</h3>
+                                <ion-icon 
+                                 className="arrow" 
+                                 name="play-outline"
+                                 onClick={() => handleSelect(index, "question")}
+                                 ></ion-icon>
+                            </ClosedCard>
                         </ClosedCards>
                     )
                 }
                 else if (e.picked === "showQuestion") {
                     return (
-                        <CardsOpen onClick={() => handleSelect(index, 'answer')}>
+                        <CardsOpen >
                             <OpenQuestion>
                                 <div>
                                     <h2>{e.react}</h2>
                                     <IconDiv >
-                                        <ion-icon name="reload-outline"></ion-icon>
+                                        <ion-icon 
+                                        name="reload-outline"
+                                        onClick={() => handleSelect(index, 'answer')}
+                                        ></ion-icon>
                                     </IconDiv>
                                 </div>
                             </OpenQuestion>
@@ -102,12 +110,12 @@ export default function Home({ newType }) {
                         </CardsOpen>
                     )
                 }
-                else if (e.picked === "final"){
+                else if (e.picked === "final") {
                     return (
                         <CardsOpen>
-                        <h1>oi</h1>
-                        
-                    </CardsOpen>
+                            <h1>oi</h1>
+
+                        </CardsOpen>
                     )
                 }
 
@@ -117,3 +125,5 @@ export default function Home({ newType }) {
     )
 
 }
+
+/* dividir por etapas e tentar fazer com que cada uma use um map */
