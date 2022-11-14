@@ -126,4 +126,4 @@ export default function Home({ newType }) {
 
 }
 
-/* dividir por etapas e tentar fazer com que cada uma use um map */
+/* dividir por etapas */
