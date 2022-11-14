@@ -1,12 +1,12 @@
 import { useState } from "react";
 import CardClosed from "../../components/ClosedCard";
-import { ClosedCard } from "../../components/ClosedCard/style";
+import OpenQuestionCard from "../../components/OpenQuestion";
 import Footer from "../../components/Footer";
 import Header from "../../components/Header";
-/* import OpenCard from "../../components/OpenCard"; */
-import { IconDiv } from "../../components/OpenCard/style";
+import OpenCard from "../../components/OpenCard";
 import data from "../../data/test";
-import { Content, ClosedCards, OpenQuestion, OpenAnswer, CardsOpen, AnswerDiv, BoxValidation, Red, Orange, Green, } from "./style";
+import { Content, ClosedCards, OpenAnswer, CardsOpen, AnswerDiv, BoxValidation, Red, Orange, Green, } from "./style";
+
 
 export default function Home({ newType }) {
     let typeData = newType.toLowerCase();
@@ -58,31 +58,21 @@ export default function Home({ newType }) {
                 if (e.picked === "notPicked") {
                     return (
                         <ClosedCards >
-                            <ClosedCard>
-                                <h3>pergunta {index + 1}</h3>
-                                <ion-icon 
-                                 className="arrow" 
-                                 name="play-outline"
-                                 onClick={() => handleSelect(index, "question")}
-                                 ></ion-icon>
-                            </ClosedCard>
+                          <CardClosed 
+                          handleSelect={handleSelect}
+                          index={index}
+                          />
                         </ClosedCards>
                     )
                 }
                 else if (e.picked === "showQuestion") {
                     return (
                         <CardsOpen >
-                            <OpenQuestion>
-                                <div>
-                                    <h2>{e.react}</h2>
-                                    <IconDiv >
-                                        <ion-icon 
-                                        name="reload-outline"
-                                        onClick={() => handleSelect(index, 'answer')}
-                                        ></ion-icon>
-                                    </IconDiv>
-                                </div>
-                            </OpenQuestion>
+                          <OpenQuestionCard 
+                           question={e.react}
+                           index={index}
+                           handleSelect={handleSelect}
+                          />
                         </CardsOpen>
                     )
                 }
@@ -90,22 +80,12 @@ export default function Home({ newType }) {
                     return (
                         <CardsOpen>
                             <OpenAnswer>
-                                <AnswerDiv>
-                                    <h2>{e.resp}</h2>
-                                    <div>
-                                        <BoxValidation onClick={() => handleSelect(index, 'final')}>
-                                            <Red id='red' onClick={() => setValidCard("red")}>
-                                                <h3>Não lembrei</h3>
-                                            </Red>
-                                            <Orange id='orage' onClick={() => setValidCard("red")}>
-                                                <h3>Quase não lembrei</h3>
-                                            </Orange>
-                                            <Green id='green' onClick={() => setValidCard("red")}>
-                                                <h3>Zap!</h3>
-                                            </Green>
-                                        </BoxValidation>
-                                    </div>
-                                </AnswerDiv>
+                               <OpenCard 
+                                index={index}
+                                answer={e.answer}
+                                handleSelect={handleSelect}
+
+                               />
                             </OpenAnswer>
                         </CardsOpen>
                     )
