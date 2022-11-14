@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import data from '../../data/index';
-import logo from '../../assets/img/smallLogo.png';
 import FlashCard from '../flashcard/FlashCard';
 import Footer from '../footer/Footer';
 import Header from '../../components/Header';
