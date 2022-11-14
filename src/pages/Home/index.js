@@ -82,10 +82,8 @@ export default function Home({ newType }) {
                         zap={zap}
                         />
                 ))}
-            <Footer />
+            <Footer answer={answer}/>
         </Content>
     )
 
 }
-
-/* dividir por etapas */

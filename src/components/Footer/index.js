@@ -1,7 +1,6 @@
 import { FooterDiv } from "./style"
-export default function Footer() {
-    let done = 0;
+export default function Footer({answer}) {
     return (
-        <FooterDiv>{done}/7 CONCLUÍDOS</FooterDiv>
+        <FooterDiv>{answer}/7 CONCLUÍDOS</FooterDiv>
     )
 }
