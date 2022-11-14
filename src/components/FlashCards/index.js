@@ -4,23 +4,20 @@ import OpenQuestionCard from '../OpenQuestion';
 import CardClosed from '../ClosedCard';
 import OpenCard from '../OpenCard';
 
-
-//Card Desvirado
-function Card ({ index, tapCard, status }) {
+function Card({ index, tapCard, status }) {
 
     return (
         <ClosedCards>
-        <CardClosed 
-        status={status}
-        tapCard={tapCard}
-        index={index}
-        />
-      </ClosedCards>
+            <CardClosed
+                status={status}
+                tapCard={tapCard}
+                index={index}
+            />
+        </ClosedCards>
     )
 }
 
-//Pergunta e Resposta
-function CardQuestion ({ question, answer, zap, index }) {
+function CardQuestion({ question, answer, zap, index }) {
 
     const [flipped, setFlipped] = React.useState(false);
 
@@ -28,32 +25,32 @@ function CardQuestion ({ question, answer, zap, index }) {
         <>
             {!flipped ? (
                 <CardsOpen >
-                <OpenQuestionCard 
-                 question={question}
-                 index={index}
-                 setFlipped={setFlipped}
-                
-                />
-              </CardsOpen>
+                    <OpenQuestionCard
+                        question={question}
+                        index={index}
+                        setFlipped={setFlipped}
+
+                    />
+                </CardsOpen>
             ) : (
                 <CardsOpen>
-                <OpenAnswer>
-                   <OpenCard 
-                    index={index}
-                    answer={answer}
-                     zap={zap}
+                    <OpenAnswer>
+                        <OpenCard
+                            index={index}
+                            answer={answer}
+                            zap={zap}
 
-                   />
-                </OpenAnswer>
-            </CardsOpen>
+                        />
+                    </OpenAnswer>
+                </CardsOpen>
             )}
-        
+
         </>
-        
+
     )
 }
 
-export default function FlashCards ({
+export default function FlashCards({
     title,
     tap,
     index,
@@ -67,20 +64,20 @@ export default function FlashCards ({
 
     return (
         <>
-            { !tap ? (
+            {!tap ? (
                 <Card
                     key={index}
                     title={title}
                     index={index}
                     tapCard={tapCard}
                     status={status}
-                    />) : (
-                    <CardQuestion
-                        question={question}
-                        answer={answer}
-                        zap={zap}
-                        index={index}
-                    />)}
+                />) : (
+                <CardQuestion
+                    question={question}
+                    answer={answer}
+                    zap={zap}
+                    index={index}
+                />)}
 
         </>
     )
