@@ -1,14 +1,15 @@
 import { ClosedCard } from "./style"
 
-export default function CardClosed({ index, picked, handleSelect }) {
+export default function CardClosed({ index, picked, tapCard,status }) {
+    console.log(status)
 
     return (
-        <ClosedCard>
+        <ClosedCard className={`flashcard ${status}`}>
             <h3>pergunta {index + 1}</h3>
             <ion-icon 
             className="arrow" 
             name="play-outline" 
-            onClick={() => handleSelect(index, "question")}
+            onClick={() => tapCard(index)}
             ></ion-icon>
         </ClosedCard>
     )

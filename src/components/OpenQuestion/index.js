@@ -2,7 +2,7 @@ import { OpenQuestion } from "../../pages/Home/style";
 import { IconDiv } from "../OpenCard/style";
 
 
-export default function OpenQuestionCard({question,handleSelect,index}) {
+export default function OpenQuestionCard({question,setFlipped,index}) {
     return (
         <OpenQuestion>
             <div>
@@ -10,7 +10,7 @@ export default function OpenQuestionCard({question,handleSelect,index}) {
                 <IconDiv >
                     <ion-icon
                         name="reload-outline"
-                        onClick={() => handleSelect(index, 'answer')}
+                        onClick={() => setFlipped(true)}
                     ></ion-icon>
                 </IconDiv>
             </div>
