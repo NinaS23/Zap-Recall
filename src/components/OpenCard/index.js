@@ -1,6 +1,5 @@
-import { useState } from "react/cjs/react.production.min";
-import data from "../../data/test";
-import { BoxValidation, IconDiv, AnswerDiv, Red, Orange, Green } from "./style"
+import { useState } from "react";
+import { BoxValidation, AnswerDiv, Red, Orange, Green } from "./style"
 
 
 export default function OpenCard({ answer, handleSelect, index }) {

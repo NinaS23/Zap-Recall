@@ -5,13 +5,12 @@ import Footer from "../../components/Footer";
 import Header from "../../components/Header";
 import OpenCard from "../../components/OpenCard";
 import data from "../../data/test";
-import { Content, ClosedCards, OpenAnswer, CardsOpen, AnswerDiv, BoxValidation, Red, Orange, Green, } from "./style";
+import { Content, ClosedCards, OpenAnswer, CardsOpen } from "./style";
 
 
 export default function Home({ newType }) {
     let typeData = newType.toLowerCase();
     let usedData = [];
-    const [validCard, setValidCard] = useState('');
     if (typeData === 'nodejs') usedData = data.nodejs;
     if (typeData === 'typescript') usedData = data.typescript;
     const [newData, setNewData] = useState(usedData);
@@ -82,7 +81,7 @@ export default function Home({ newType }) {
                             <OpenAnswer>
                                <OpenCard 
                                 index={index}
-                                answer={e.answer}
+                                answer={e.resp}
                                 handleSelect={handleSelect}
 
                                />
