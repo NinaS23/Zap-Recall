@@ -16,7 +16,7 @@ export default function Home({ newType }) {
     const [newData, setNewData] = useState(usedData);
     const [card, setCard] = useState(null);
 
-    const handleSelect = (selectedIndex, type) => {
+    function handleSelect (selectedIndex, type) {
         let dataModificated = [];
         let mapData = [];
         if (typeData === 'nodejs') mapData = data.nodejs;
