@@ -22,6 +22,12 @@ line-height: 58px;
 /* identical to box height */
 color: #FFFFFF
 }
+div{
+    display: flex;
+    width: 90%;
+    align-items: center;
+    justify-content: center;
+}
 `
 
 export {

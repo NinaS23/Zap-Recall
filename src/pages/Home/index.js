@@ -82,7 +82,7 @@ export default function Home({ newType }) {
                         zap={zap}
                         />
                 ))}
-            <Footer answer={answer}/>
+            <Footer answer={answer} dataAnswer={dataAnswer}/>
         </Content>
     )
 
