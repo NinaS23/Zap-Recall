@@ -9,6 +9,8 @@ import { useNavigate } from "react-router-dom";
 export default function Footer({ answer, dataAnswer, }) {
     const { metaPoint } = useContext(MetaContext);
     const navigate = useNavigate();
+    if(metaPoint === null) navigate("/")
+
     function showResult() {
         let sum = 0;
         for (let i = 0; i < dataAnswer.length; i++) {
@@ -22,7 +24,6 @@ export default function Footer({ answer, dataAnswer, }) {
         }
 
     }
-    console.log(showResult())
 
     if (answer !== 7) {
         return (
