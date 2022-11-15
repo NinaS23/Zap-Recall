@@ -10,10 +10,10 @@ export default function SelectTypeQuestions({ setNewType }) {
     const navigate = useNavigate();
     const list = [
         { id: 0, name: 'escolha um tema para zapear...' },
-        { id: 1, name: 'Typescript' },
-        { id: 2, name: 'NodeJs' },
-        { id: 3, name: 'PostgresSQL' },
-        { id: 4, name: 'MongoDB' }
+        { id: 1, name: 'Chihiro' },
+        { id: 2, name: 'Princesa Mononoke' },
+        { id: 3, name: 'Ponyo' },
+        { id: 4, name: 'As Memórias de Marnie' }
     ];
 
     function startGame(questionType) {

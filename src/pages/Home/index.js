@@ -9,8 +9,11 @@ import FlashCards from "../../components/FlashCards";
 export default function Home({ newType }) {
     let typeData = newType;
     let usedData = [];
-    if (typeData === 'NodeJs') usedData = data.nodejs;
-    if (typeData === 'Typescript') usedData = data.typescript;
+    if (typeData === 'Chihiro') usedData = data.chihiro;
+    if (typeData === 'Princesa Mononoke') usedData = data.mononoke;
+    if (typeData === 'Ponyo') usedData = data.ponyo;
+    if (typeData === 'As Memórias de Marnie') usedData = data.marnie;
+
     const [newData, setNewData] = useState(usedData);
 
     let dataSelectedByUser = newData.map(value => {
