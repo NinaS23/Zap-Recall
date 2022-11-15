@@ -26,14 +26,6 @@ div{
     margin-left: 15px;
     margin-right: 15px;
 }
-h2{
-    font-family: 'Recursive';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 14px;
-    color: #333333;
-}
 `
 
 const IconDiv = styled.div`
